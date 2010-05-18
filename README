@@ -1,0 +1,36 @@
+#==============================================================================#
+  X11::Terminal
+#==============================================================================#
+
+A module to provide an object-oriented interface to launching X terminal
+windows.
+
+#==============================================================================#
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+#==============================================================================#
+
+DEPENDENCIES
+
+This module requires at least perl 5.6.0 and these other modules and libraries:
+
+  Moose
+
+#==============================================================================#
+
+COPYRIGHT AND LICENCE
+
+Copyright Evan Giles (Copyright 2010).
+
+This program is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
+
+#==============================================================================#

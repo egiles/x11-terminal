@@ -1,0 +1,10 @@
+Changes
+lib/X11/Terminal.pm
+lib/X11/Terminal/XTerm.pm
+Makefile.PL
+MANIFEST
+README
+t/01.basic.t
+t/10-xterm.t
+t/90.pod.t
+t/91.podcoverage.t
