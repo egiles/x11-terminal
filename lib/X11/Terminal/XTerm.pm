@@ -36,13 +36,13 @@ Create a new XTerm object, optionally with the specified attributes (see below).
 
 =head1 ATTRIBUTES
 
-The attributes may be set by passing values to the constructur, or by calling the accessor methods.
+Each of the following attributes provide an accessor method, but they can also be set in the constructor.
 
 =over 4
  
 =item host
 
-Specifies the remote host to log in to (using ssh)
+Specifies the remote host to log in to (using ssh).
 
 =item agentforward
 
@@ -79,9 +79,9 @@ Set the preferred size and position of the XTerm window
 
 =over 4
 
-=item launch();
+=item launch($debug);
 
-Launch an xterm window.
+Calculates (and returns) the command that will launch your xterm.  It also runs that command in a child process - unless $debug is specified.
 
 =item terminalArgs();
 

@@ -91,26 +91,11 @@ has 'background' => (
 
 =over 4
 
-=item shellCommand();
+=item launch($debug);
 
-Return the (probably remote) shell command that should be run from within 
-the terminal window.  There should be no need to call this directly.
-=cut
+Calculates (and returns) the command that will launch your terminal program.  The exact content of the command will depend on which subclass is calling the command, and the attributes that have been specified.
 
-sub shellCommand {
-  my ($self) = @_;
-
-  if ( my $host = $self->host() ) {
-    my $sshForward = $self->xforward() ? "-X" : "";
-    my $agentForward = $self->agentforward() ? "-A" : "";
-    return "ssh $sshForward $agentForward $host";
-  }
-  return "bash";
-}
-
-=item launch();
-
-Launch an xterm window, using whatever attributes have been defined to customse it appearance and behaviour.
+It also runs that command in a child process - unless $debug is specified.
 =cut
 
 sub launch {
@@ -129,9 +114,25 @@ sub launch {
   return $command;
 }
 
+=item shellCommand();
+
+Returns the shell command that should be run within the terminal window.  There should be no need to call this method directly.
+=cut
+
+sub shellCommand {
+  my ($self) = @_;
+
+  if ( my $host = $self->host() ) {
+    my $sshForward = $self->xforward() ? "-X" : "";
+    my $agentForward = $self->agentforward() ? "-A" : "";
+    return "ssh $sshForward $agentForward $host";
+  }
+  return "bash";
+}
+
 =item terminalName();
 
-Returns the name of the program that will be run to provide the terminal window
+Returns the name of the program that will be run to provide the terminal window.  There should be no need to call this method directly.
 =cut
 
 sub terminalName {
