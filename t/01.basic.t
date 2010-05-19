@@ -1,11 +1,17 @@
 use strict;
 use warnings;
 
-use Test::More tests => 6;
+use Test::More tests => 9;
 
 #==============================================================================#
 
-for my $module ( "X11::Terminal", "X11::Terminal::XTerm" ) {
+my @modules = (
+  "X11::Terminal",
+  "X11::Terminal::XTerm",
+  "X11::Terminal::GnomeTerminal"
+);
+
+for my $module ( @modules ) {
   require_ok($module);
   my $term = $module->new();
   ok($term,"Created $module object");

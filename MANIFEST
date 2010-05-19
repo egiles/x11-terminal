@@ -1,5 +1,6 @@
 Changes
 lib/X11/Terminal.pm
+lib/X11/Terminal/GnomeTerminal.pm
 lib/X11/Terminal/XTerm.pm
 Makefile.PL
 MANIFEST

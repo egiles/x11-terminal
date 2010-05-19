@@ -119,7 +119,7 @@ sub launch {
   my $shell = $self->shellCommand();
   my $term = $self->terminalName();
   my $args = $self->terminalArgs();
-  my $command = "$term $args -e $shell";
+  my $command = "$term $args -e '$shell'";
 
   if ( ! $debug ) {
     if ( fork() == 0 ) {
