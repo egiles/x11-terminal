@@ -1,4 +1,9 @@
 Changes
+debian/changelog
+debian/compat
+debian/control
+debian/copyright
+debian/rules
 lib/X11/Terminal.pm
 lib/X11/Terminal/GnomeTerminal.pm
 lib/X11/Terminal/XTerm.pm

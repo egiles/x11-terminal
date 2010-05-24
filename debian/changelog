@@ -1,0 +1,5 @@
+libx11-terminal-perl (0.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Evan Giles <evan@catalyst.net.nz>  Tue, 25 May 2010 08:56:26 +1200
