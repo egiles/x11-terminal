@@ -10,7 +10,7 @@ Homepage: http://search.cpan.org/dist/X11-Terminal/
 Package: libx11-terminal-perl
 Architecture: all
 Depends: ${perl:Depends}, ${misc:Depends}, libmoose-perl (>= 0.54)
-Description: Object oriented perl interface for launching terminal windows
- Object oriented perl interface for launching terminal windows
+Description: An object oriented perl interface for launching terminal windows
+ An object oriented perl interface for launching terminal windows
  .
  This description was automagically extracted from the module by dh-make-perl.

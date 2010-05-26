@@ -49,7 +49,7 @@ binary-arch:
 binary-indep: build install
 	dh_testdir
 	dh_testroot
-	dh_installdocs README X11-Terminal-0.1/README
+	dh_installdocs README
 	dh_installchangelogs Changes
 	dh_perl
 	dh_compress
