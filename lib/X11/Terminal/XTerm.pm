@@ -3,7 +3,6 @@ package X11::Terminal::XTerm;
 use Moose;
 extends 'X11::Terminal';
 
-our $VERSION = 0.1;
 =head1 NAME
 
 X11::Terminal::XTerm - Create customised xterm windows
@@ -14,11 +13,11 @@ This module provides an object interface to launching xterm windows.
 
 	use X11::Terminal::XTerm;
 
-	my $xt1 = X11::Terminal::XTerm->new();
-	my $xt2 = X11::Terminal::XTerm->new(host => "remoteserver");
-	my $xt3 = X11::Terminal::XTerm->new(foreground => "green");
+	my $t1 = X11::Terminal::XTerm->new();
+	my $t2 = X11::Terminal::XTerm->new(host => "remoteserver");
+	my $t3 = X11::Terminal::XTerm->new(foreground => "green");
 
-	for ( $xt1, xt2, $xt3 ) {
+	for ( $t1, $t2, $t3 ) {
 	  $_->launch();
 	}
 
@@ -60,6 +59,10 @@ Set the forground colour to be used in the XTerm window
 
 Set the background colour to be used in the XTerm window
 
+=item scrollback
+
+Set the number of lines that should be stored made accessable via the xterm scrollback buffer
+
 =item font
 
 Set the font used in the XTerm window
@@ -85,7 +88,7 @@ Calculates (and returns) the command that will launch your xterm.  It also runs 
 
 =item terminalArgs();
 
-Return the arguments that will be passed to the xterm.  This will provide the customisations.  There be no reason to call this method directly.
+Return the arguments that will be passed to the xterm.  This will provide the customisations.  There should be no reason to call this method directly.
 =cut
 
 sub terminalArgs {
@@ -107,6 +110,9 @@ sub terminalArgs {
   if ( my $colour = $self->background() ) {
     $args .= " -bg $colour";
   }
+  if ( my $lines = $self->scrollback() ) {
+    $args .= " -sl $lines";
+  }
   return "$args";
 }
 
@@ -116,7 +122,7 @@ sub terminalArgs {
 
 Copyright 2010 Evan Giles.
 
-This program is free software; you can redistribute it and/or modify it
+This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 =head1 SEE ALSO

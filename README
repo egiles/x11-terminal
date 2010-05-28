@@ -10,6 +10,9 @@ DESCRIPTION
   X11::Terminal::GnomeTerminal
     A subclass of X11::Terminal which will launch gnome-terminal terminals
 
+  X11::Terminal::Konsole
+    A subclass of X11::Terminal which will launch konsole terminals
+
 
 PREREQUISITES
 
@@ -26,15 +29,6 @@ BUILDING/INSTALLING
       make
       make test
       make install
-
-
-STATUS
-
-  Please send any feedback to the author: egiles@cpan.org
-
-  See 'Changes' for a detailed history.
-
-  See the perldoc for each module for complete documentation.
 
 
 COPYRIGHT AND LICENCE

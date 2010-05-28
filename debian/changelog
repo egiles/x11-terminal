@@ -1,3 +1,9 @@
+libx11-terminal-perl (0.2) jaunty; urgency=low
+
+  * New upstream
+
+ -- Evan Giles <evan@catalyst.net.nz>  Sat, 29 May 2010 21:16:49 +1200
+
 libx11-terminal-perl (0.1-1) unstable; urgency=low
 
   * Initial Release.

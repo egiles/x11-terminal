@@ -1,21 +1,21 @@
-package X11::Terminal::GnomeTerminal;
+package X11::Terminal::Konsole;
 
 use Moose;
 extends 'X11::Terminal';
 
 =head1 NAME
 
-X11::Terminal::GnomeTerminal - Create customised gnome-terminal windows
+X11::Terminal::Konsole - Create customised gnome-terminal windows
 
 =head1 SYNOPSIS
 
 This module provides an object interface to launching gnome-terminal windows.
 
-	use X11::Terminal::GnomeTerminal;
+	use X11::Terminal::Konsole;
 
-	my $t1 = X11::Terminal::GnomeTerminal->new();
-	my $t2 = X11::Terminal::GnomeTerminal->new(host => "remoteserver");
-	my $t3 = X11::Terminal::GnomeTerminal->new(profile => "special");
+	my $t1 = X11::Terminal::Konsole->new();
+	my $t2 = X11::Terminal::Konsole->new(host => "remoteserver");
+	my $t3 = X11::Terminal::Konsole->new(profile => "special");
 
 	for ( $t1, $t2, $t3 ) {
 	  $_->launch();
@@ -26,9 +26,9 @@ This module provides an object interface to launching gnome-terminal windows.
 
 =over 4
 
-=item X11::Terminal::GnomeTerminal->new(%attr);
+=item X11::Terminal::Konsole->new(%attr);
 
-Create a new GnomeTerminal object, optionally with the specified attributes (see below).
+Create a new Konsole object, optionally with the specified attributes (see below).
 
 =back
 
@@ -53,11 +53,7 @@ If the host has been specified, and xforward is true, the login to that host wil
 
 =item profile
 
-Set the GnomeTerminal window profile name
-
-=item geometry
-
-Set the preferred size and position of the GnomeTerminal window
+Set the Konsole profile name
 
 =back
 
@@ -80,21 +76,9 @@ sub terminalArgs {
 
   my $args = "";
   if ( my $name = $self->profile() ) {
-    $args .= " --window-with-profile=$name";
-  }
-  if ( my $geo = $self->geometry() ) {
-    $args .= " -geometry $geo";
+    $args .= " --profile $name";
   }
   return "$args";
-}
-
-=item terminalName();
-
-Returns the name of the executable program that we want to run.  There should be no reason to call this method directly.
-=cut
-
-sub terminalName {
-  return "gnome-terminal";
 }
 
 =back
@@ -111,4 +95,4 @@ under the same terms as Perl itself.
 L<X11::Terminal>
 =cut
 
-1; # End of X11::Terminal::GnomeTerminal
+1; # End of X11::Terminal::Konsole

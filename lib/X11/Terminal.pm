@@ -2,7 +2,7 @@ package X11::Terminal;
 
 use Moose;
 
-our $VERSION = 0.1;
+our $VERSION = 0.2;
 =head1 NAME
 
 X11::Terminal - Create customised X11 termnal windows
@@ -25,11 +25,13 @@ For example:
 
 Each of the following attributes provide an accessor method, but they can also be set in the constructor.
 
-Note that there are a lot of appearance related attributes, many of which will have no effect - depending on the subclass involved.  For example, a Gnome-Terminal subclass can't set the font as Gnome-Terminals utilise a profile setting for that bahaviour.
+The following attribues define the shell command to be run within the terminal window.
 
-=over 4
+=over
 
 =item host 
+
+If set, the terminal window will ssh to that host.  Otherwise, it will just run a bash shell.
 =cut
 has 'host' => (
   is => 'rw',
@@ -37,6 +39,8 @@ has 'host' => (
 );
 
 =item xforward 
+
+If set, the ssh command will enable X11 forwarding.  Requires L</host>.
 =cut
 has 'xforward' => (
   is => 'rw',
@@ -44,11 +48,18 @@ has 'xforward' => (
 );
 
 =item agentforward 
+
+If set, the ssh command will enable agent forwarding.  Requires L</host>.
 =cut
 has 'agentforward' => (
   is => 'rw',
   isa => 'Bool',
 );
+=back
+
+The following attributes are implemented in the various subclasses and depending on the subclass involved they may have no effect.  For example, a C<GnomeTerminal> subclass can't set the font as gnome-terminals utilise a profile setting for that bahaviour.
+
+=over
 
 =item profile
 =cut
@@ -85,11 +96,18 @@ has 'background' => (
   isa => 'Str',
 );
 
+=item scrollback
+=cut
+has 'scrollback' => (
+  is => 'rw',
+  isa => 'Int',
+);
+
 =back
 
 =head1 OTHER METHODS
 
-=over 4
+=over
 
 =item launch($debug);
 
@@ -148,7 +166,7 @@ sub terminalName {
 
 Copyright 2010 Evan Giles.
 
-This program is free software; you can redistribute it and/or modify it
+This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 =cut
 
