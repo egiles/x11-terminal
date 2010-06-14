@@ -100,16 +100,16 @@ sub terminalName {
 
 =back
 
+=head1 SEE ALSO
+
+L<X11::Terminal>
+
 =head1 COPYRIGHT
 
 Copyright 2010 Evan Giles.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
-
-=head1 SEE ALSO
-
-L<X11::Terminal>
 =cut
 
 1; # End of X11::Terminal::GnomeTerminal
