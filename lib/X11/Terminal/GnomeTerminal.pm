@@ -3,6 +3,7 @@ package X11::Terminal::GnomeTerminal;
 use Moose;
 extends 'X11::Terminal';
 
+our $VERSION = 0.3;
 =head1 NAME
 
 X11::Terminal::GnomeTerminal - Create customised gnome-terminal windows

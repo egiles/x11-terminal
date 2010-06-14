@@ -1,6 +1,8 @@
 Revision history for Perl extension X11::Terminal.
 
-0.02 2010/06/27 Add scrollback option (for XTerm)
+0.3  2010/06/27 Include version in every .pm file
+
+0.2  2010/06/27 Add scrollback option (for XTerm)
                 Add support for Konsole
                 Documentation corrections
 
