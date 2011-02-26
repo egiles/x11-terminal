@@ -6,7 +6,7 @@ extends 'X11::Terminal';
 our $VERSION = 0.3;
 =head1 NAME
 
-X11::Terminal::Konsole - Create customised gnome-terminal windows
+X11::Terminal::Konsole - Create customised konsole windows
 
 =head1 SYNOPSIS
 
@@ -90,7 +90,7 @@ L<X11::Terminal>
 
 =head1 COPYRIGHT
 
-Copyright 2010 Evan Giles.
+Copyright 2010-2011 Evan Giles.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

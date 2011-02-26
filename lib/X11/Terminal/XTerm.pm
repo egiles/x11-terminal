@@ -125,7 +125,7 @@ L<X11::Terminal>
 
 =head1 COPYRIGHT
 
-Copyright 2010 Evan Giles.
+Copyright 2010-2011 Evan Giles.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
