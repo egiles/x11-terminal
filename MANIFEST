@@ -15,5 +15,6 @@ t/01.basic.t
 t/10-xterm.t
 t/20-gnome-terminal.t
 t/30-konsole.t
-t/90.pod.t
-t/91.podcoverage.t
+t/99.podcoverage.t
+t/99.pod.t
+t/99.version.t
