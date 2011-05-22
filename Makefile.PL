@@ -11,5 +11,4 @@ WriteMakefile(
     PREREQ_PM     => { 'Moose' => '0.54', },
     VERSION_FROM  => 'lib/X11/Terminal.pm',
     dist          => { COMPRESS=>'gzip', SUFFIX=>'gz' },
-    clean         => { FILES=>'*stamp debian/files debian/libx11-terminal-perl' },
 );
