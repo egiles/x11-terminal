@@ -10,7 +10,7 @@ X11::Terminal::Konsole - Create customised konsole windows
 
 =head1 SYNOPSIS
 
-This module provides an object interface to launching gnome-terminal windows.
+This module provides an object interface to launching konsole windows.
 
 	use X11::Terminal::Konsole;
 
