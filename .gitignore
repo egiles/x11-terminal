@@ -1,4 +1,7 @@
 Makefile*
+META.yml
 *blib
 *.tar.gz
 *stamp
+_build
+Build
