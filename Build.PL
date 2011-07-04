@@ -5,6 +5,14 @@ use warnings;
 
 use Module::Build;
 
+my $repo = "github.com/egiles/x11-terminal";
+my $meta1 = "http://$repo";
+my $meta2 = {
+    type => "git",
+    web => $meta1,
+    url => "git://$repo.git",
+};
+
 my $build = Module::Build->new (
      module_name => 'X11::Terminal',
      abstract_from => 'lib/X11/Terminal.pm',
@@ -17,11 +25,7 @@ my $build = Module::Build->new (
      create_makefile_pl => 'traditional',
      meta_merge     => {
        resources => {
-         repository => {
-           type => "git",
-           web => 'http://github.com/egiles/x11-terminal',
-           url => 'git://github.com/egiles/x11-terminal.git',
-         }
+         repository => Module::Build->can("metafile2") ? $meta2 : $meta1,
        }
      },
      add_to_cleanup => [ 'Makefile.PL', 'META.yml' ],
