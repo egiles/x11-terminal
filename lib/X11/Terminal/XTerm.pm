@@ -30,14 +30,16 @@ This module provides an object interface to launching xterm windows.
 
 =item X11::Terminal::XTerm->new(%attr);
 
-Create a new XTerm object, optionally with the specified attributes (see below).
+Create a new XTerm object, optionally with the specified attributes
+(see below).
 
 =back
 
 
 =head1 ATTRIBUTES
 
-Each of the following attributes provide an accessor method, but they can also be set in the constructor.
+Each of the following attributes provide an accessor method, but they can
+also be set in the constructor.
 
 =over 4
  
@@ -47,11 +49,13 @@ Specifies the remote host to log in to (using ssh).
 
 =item agentforward
 
-If the host has been specified, and agentforward is true, the login to that host will use SSH Agent Forarding.
+If the host has been specified, and agentforward is true, the login to that
+host will use SSH Agent Forarding.
 
 =item xforward
 
-If the host has been specified, and xforward is true, the login to that host will use SSH X Forarding.
+If the host has been specified, and xforward is true, the login to that host
+will use SSH X Forarding.
 
 =item foreground
 
@@ -63,7 +67,8 @@ Set the background colour to be used in the XTerm window
 
 =item scrollback
 
-Set the number of lines that should be stored made accessable via the xterm scrollback buffer
+Set the number of lines that should be stored made accessable via the xterm
+scrollback buffer
 
 =item font
 
@@ -86,11 +91,13 @@ Set the preferred size and position of the XTerm window
 
 =item launch($debug);
 
-Calculates (and returns) the command that will launch your xterm.  It also runs that command in a child process - unless $debug is specified.
+Calculates (and returns) the command that will launch your xterm.  It also
+runs that command in a child process - unless $debug is specified.
 
 =item terminalArgs();
 
-Return the arguments that will be passed to the xterm.  This will provide the customisations.  There should be no reason to call this method directly.
+Return the arguments that will be passed to the xterm.  This will provide
+the customisations.  There should be no reason to call this method directly.
 =cut
 
 sub terminalArgs {

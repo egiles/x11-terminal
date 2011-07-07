@@ -10,8 +10,9 @@ X11::Terminal - Create customised X11 termnal windows
 
 =head1 SYNOPSIS
 
-This module provides a baseclass for launching terminal windows on your desktop.
-You would normally instantiate subclass rather than using this class directly.
+This module provides a baseclass for launching terminal windows on your
+desktop.  You would normally instantiate subclass rather than using this
+class directly.
 
 For example:
 
@@ -24,15 +25,18 @@ For example:
 
 =head1 ATTRIBUTES
 
-Each of the following attributes provide an accessor method, but they can also be set in the constructor.
+Each of the following attributes provide an accessor method, but they
+can also be set in the constructor.
 
-The following attribues define the shell command to be run within the terminal window.
+The following attribues define the shell command to be run within the
+terminal window.
 
 =over
 
 =item host 
 
-If set, the terminal window will ssh to that host.  Otherwise, it will just run a bash shell.
+If set, the terminal window will ssh to that host.  Otherwise, it will
+just run a bash shell.
 =cut
 has 'host' => (
   is => 'rw',
@@ -58,7 +62,10 @@ has 'agentforward' => (
 );
 =back
 
-The following attributes are implemented in the various subclasses and depending on the subclass involved they may have no effect.  For example, a C<GnomeTerminal> subclass can't set the font as gnome-terminals utilise a profile setting for that bahaviour.
+The following attributes are implemented in the various subclasses and
+depending on the subclass involved they may have no effect.  For example,
+a C<GnomeTerminal> subclass can't set the font as gnome-terminals
+utilise a profile setting for that bahaviour.
 
 =over
 
@@ -112,7 +119,9 @@ has 'scrollback' => (
 
 =item launch($debug);
 
-Calculates (and returns) the command that will launch your terminal program.  The exact content of the command will depend on which subclass is calling the command, and the attributes that have been specified.
+Calculates (and returns) the command that will launch your terminal program.
+The exact content of the command will depend on which subclass is calling
+the command, and the attributes that have been specified.
 
 It also runs that command in a child process - unless $debug is specified.
 =cut
@@ -135,7 +144,8 @@ sub launch {
 
 =item shellCommand();
 
-Returns the shell command that should be run within the terminal window.  There should be no need to call this method directly.
+Returns the shell command that should be run within the terminal window.  
+There should be no need to call this method directly.
 =cut
 
 sub shellCommand {
@@ -151,7 +161,8 @@ sub shellCommand {
 
 =item terminalName();
 
-Returns the name of the program that will be run to provide the terminal window.  There should be no need to call this method directly.
+Returns the name of the program that will be run to provide the terminal
+window.  There should be no need to call this method directly.
 =cut
 
 sub terminalName {
