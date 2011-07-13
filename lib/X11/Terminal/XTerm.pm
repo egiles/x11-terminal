@@ -50,12 +50,12 @@ Specifies the remote host to log in to (using ssh).
 =item agentforward
 
 If the host has been specified, and agentforward is true, the login to that
-host will use SSH Agent Forarding.
+host will use SSH Agent Forwarding.
 
 =item xforward
 
 If the host has been specified, and xforward is true, the login to that host
-will use SSH X Forarding.
+will use SSH X Forwarding.
 
 =item foreground
 
@@ -67,7 +67,7 @@ Set the background colour to be used in the XTerm window
 
 =item scrollback
 
-Set the number of lines that should be stored made accessable via the xterm
+Set the number of lines that should be stored made accessible via the xterm
 scrollback buffer
 
 =item font
@@ -101,28 +101,28 @@ the customisations.  There should be no reason to call this method directly.
 =cut
 
 sub terminalArgs {
-  my ($self) = @_;
+    my ($self) = @_;
 
-  my $args = "";
-  if ( my $font = $self->font() ) {
-    $args .= " -fn $font";
-  }
-  if ( my $name = $self->profile() ) {
-    $args .= " -name $name";
-  }
-  if ( my $colour = $self->foreground() ) {
-    $args .= " -fg $colour";
-  }
-  if ( my $geo = $self->geometry() ) {
-    $args .= " -geometry $geo";
-  }
-  if ( my $colour = $self->background() ) {
-    $args .= " -bg $colour";
-  }
-  if ( my $lines = $self->scrollback() ) {
-    $args .= " -sl $lines";
-  }
-  return "$args";
+    my $args = "";
+    if ( my $font = $self->font() ) {
+        $args .= " -fn $font";
+    }
+    if ( my $name = $self->profile() ) {
+        $args .= " -name $name";
+    }
+    if ( my $colour = $self->foreground() ) {
+        $args .= " -fg $colour";
+    }
+    if ( my $geo = $self->geometry() ) {
+        $args .= " -geometry $geo";
+    }
+    if ( my $colour = $self->background() ) {
+        $args .= " -bg $colour";
+    }
+    if ( my $lines = $self->scrollback() ) {
+        $args .= " -sl $lines";
+    }
+    return "$args";
 }
 
 =back
@@ -139,4 +139,4 @@ This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 =cut
 
-1; # End of X11::Terminal::XTerm
+1;    # End of X11::Terminal::XTerm

@@ -50,12 +50,12 @@ Specifies the remote host to log in to (using ssh).
 =item agentforward
 
 If the host has been specified, and agentforward is true, the login to that
-host will use SSH Agent Forarding.
+host will use SSH Agent Forwarding.
 
 =item xforward
 
 If the host has been specified, and xforward is true, the login to that host
-will use SSH X Forarding.
+will use SSH X Forwarding.
 
 =item profile
 
@@ -85,16 +85,16 @@ directly.
 =cut
 
 sub terminalArgs {
-  my ($self) = @_;
+    my ($self) = @_;
 
-  my $args = "";
-  if ( my $name = $self->profile() ) {
-    $args .= " --window-with-profile=$name";
-  }
-  if ( my $geo = $self->geometry() ) {
-    $args .= " -geometry $geo";
-  }
-  return "$args";
+    my $args = "";
+    if ( my $name = $self->profile() ) {
+        $args .= " --window-with-profile=$name";
+    }
+    if ( my $geo = $self->geometry() ) {
+        $args .= " -geometry $geo";
+    }
+    return "$args";
 }
 
 =item terminalName();
@@ -104,7 +104,7 @@ should be no reason to call this method directly.
 =cut
 
 sub terminalName {
-  return "gnome-terminal";
+    return "gnome-terminal";
 }
 
 =back
@@ -121,4 +121,4 @@ This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 =cut
 
-1; # End of X11::Terminal::GnomeTerminal
+1;    # End of X11::Terminal::GnomeTerminal
