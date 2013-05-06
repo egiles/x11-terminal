@@ -2,7 +2,7 @@ package X11::Terminal;
 
 use Moose;
 
-our $VERSION = 0.4;
+our $VERSION = 1.0.0;
 
 =head1 NAME
 

@@ -1,5 +1,5 @@
 Makefile*
-META.yml
+*META.*
 *blib
 *.tar.gz
 *stamp

@@ -15,3 +15,4 @@ t/30-konsole.t
 t/99-podcoverage.t
 t/99-pod.t
 t/99-version.t
+META.json

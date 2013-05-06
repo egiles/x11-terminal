@@ -15,6 +15,7 @@ my $build = Module::Build->new (
         'Moose'           => 0.54,
      },
      create_makefile_pl => 'traditional',
+    configure_requires => { 'Module::Build' => 0.38 },
      meta_merge     => {
          resources => {
              repository => "http://github.com/egiles/x11-terminal",

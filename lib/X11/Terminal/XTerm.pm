@@ -3,7 +3,7 @@ package X11::Terminal::XTerm;
 use Moose;
 extends 'X11::Terminal';
 
-our $VERSION = 0.4;
+our $VERSION = 1.0.0;
 
 =head1 NAME
 
